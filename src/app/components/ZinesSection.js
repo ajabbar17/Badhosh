@@ -59,9 +59,7 @@ export default function ZinesSection() {
                     className="w-full max-w-85 max-md:max-w-65 aspect-3/4 bg-(--gray-100) bg-cover bg-center border border-(--border-color) flex items-center justify-center"
                     style={{ backgroundImage: `url(${zine.cover})` }}
                   >
-                    <span className="text-xs text-(--gray-400) tracking-widest uppercase">
-                      Cover
-                    </span>
+                   
                   </div>
                 </div>
               </article>
