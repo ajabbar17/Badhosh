@@ -1,26 +1,188 @@
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN SYSTEM — Monochrome, Minimal, Sharp
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e0e0e0;
+  --gray-300: #cccccc;
+  --gray-400: #999999;
+  --gray-500: #666666;
+  --gray-600: #333333;
+  --border-color: #e0e0e0;
+  --border-color-dark: #333333;
+
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+
+  --section-padding: 80px 0;
+  --container-width: 1200px;
+  --container-padding: 0 40px;
+
+  --transition-speed: 0.3s;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--white);
+  --color-foreground: var(--black);
+  --font-sans: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   GLOBAL RESETS & TYPOGRAPHY
+   ============================================ */
+
+@layer base {
+  * {
+    border-radius: 0 !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.1rem; }
+  h3 { font-size: 0.9rem; }
+
+  p {
+    line-height: 1.7;
+    color: var(--gray-500);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity var(--transition-speed);
+  }
+
+  a:hover {
+    opacity: 0.6;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+/* ============================================
+   DIVIDER LINES
+   ============================================ */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-color);
+  border: none;
+}
+
+.divider--dark {
+  background: var(--border-color-dark);
+}
+
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.section-header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--black);
+  margin: 20px auto 0;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  text-align: center;
+  border: 1px solid var(--black);
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--black);
+  color: var(--white);
+  opacity: 1;
+}
+
+.btn--white {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.btn--white:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.btn--filled {
+  background: var(--black);
+  color: var(--white);
+}
+
+.btn--filled:hover {
+  background: transparent;
+  color: var(--black);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 50px 0;
+    --container-padding: 0 20px;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1rem; }
 }
