@@ -3,27 +3,27 @@ import Link from "next/link";
 const zines = [
   {
     id: "zine1",
-    title: "Zine I — Fragments",
+    title: "Zine I — Internalized Guilt",
     description:
-      "The first volume in the series explores fragmented narratives and the construction of identity through collage, photography, and handwritten text. It draws on field research and personal archives to create a visual essay that resists linear reading.",
+      "This publication documents the first stage of Badhosh, where identity is shaped through fear, observation, and social expectation. Through performance stills and visual narratives, it reflects on the ways silence, shame, and self-surveillance become embedded within everyday experience.",
     year: "2024",
     pages: 22,
     cover: "/zine1.png",
   },
   {
     id: "zine2",
-    title: "Zine II — Echoes",
+    title: "Zine II — Desire and Longing",
     description:
-      "The second volume examines repetition and transformation, tracing how stories change as they move through different bodies and contexts. Combining interviews, illustration, and documentary photography.",
+      "The second publication shifts toward intimacy, desire, and imagined connection. Through symbolic performances and constructed narratives, it captures the emotional tension between longing and reality, exploring the search for affection, belonging, and recognition.",
     year: "2024",
     pages: 20,
     cover: "/zine2.png",
   },
   {
     id: "zine3",
-    title: "Zine III — Residue",
+    title: "Zine III — Acceptance and Belonging",
     description:
-      "The final volume gathers what remains after the performances are complete — traces, remnants, and afterimages. It functions as both documentation and its own independent work.",
+      "The final publication brings together themes of self-acceptance, resilience, and collective belonging. It documents a movement away from isolation and toward community, considering how identity can be reclaimed through connection, understanding, and shared experience.",
     year: "2025",
     pages: 20,
     cover: "/zine3.png",
